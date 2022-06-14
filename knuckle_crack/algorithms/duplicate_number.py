@@ -9,7 +9,10 @@ def find_duplicate_number(array: list[int]) -> int | None:
         Return the duplicate number or None if there is no duplicate number.
     """
     expected_array = set(range(min(array), max(array) + 1))
-    return expected_array.difference(array) or None
+    try:
+        return expected_array.difference(array).pop()
+    except KeyError:
+        return None
 
 
 if __name__ == "__main__":
@@ -19,4 +22,4 @@ if __name__ == "__main__":
     input_array[13] = 13
 
     missing_number = find_duplicate_number(input_array)
-    print(f"Missing number: {missing_number}")
+    print(f"Duplicate number: {missing_number}")
