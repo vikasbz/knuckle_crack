@@ -1,0 +1,28 @@
+# Ignore dotenv files
+*.env
+env.txt
+
+# Ignore Python cache files
+*.pyc
+*__pycache__
+.pytest_cache
+
+# Ignore log files
+logs
+
+# Test-related files
+# Ignore test-related files
+coverage.data
+coverage
+.coverage
+htmlcov
+
+# Ignore IDE-generated files
+.idea
+.vscode
+
+# Ignore MacOS-specific files
+*.DS_Store
+
+# Git workflow (automated)
+git_commands
