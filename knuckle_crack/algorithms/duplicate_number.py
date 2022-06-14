@@ -1,4 +1,4 @@
-def find_duplicate_number(array: list[int]) -> int | None:
+async def find_duplicate_number(array: list[int]) -> int | None:
     """
     Write a function that finds the duplicate number in an unsorted array containing
     every number from 1 to 100.
@@ -16,10 +16,12 @@ def find_duplicate_number(array: list[int]) -> int | None:
 
 
 if __name__ == "__main__":
+    import asyncio
+
     # List: 1...100
     input_array = list(range(1, 101))
     # Replace 14 with 13. 13 is the duplicate number
     input_array[13] = 13
 
-    missing_number = find_duplicate_number(input_array)
+    missing_number = asyncio.run(find_duplicate_number(input_array))
     print(f"Duplicate number: {missing_number}")

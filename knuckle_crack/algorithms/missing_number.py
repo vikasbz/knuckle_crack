@@ -1,4 +1,4 @@
-def find_missing_number(array: list[int]) -> int | None:
+async def find_missing_number(array: list[int]) -> int | None:
     """
     Finds the missing number in an unsorted array containing every one of the other 99
     numbers ranging from 1 to 100.
@@ -12,10 +12,12 @@ def find_missing_number(array: list[int]) -> int | None:
 
 
 if __name__ == "__main__":
+    import asyncio
+
     # List: 1...100
     input_array = list(range(1, 101))
     # Remove 13 from the list
     input_array.remove(13)
 
-    missing_number = find_missing_number(input_array)
+    missing_number = asyncio.run(find_missing_number(input_array))
     print(f"Missing number: {missing_number}")
